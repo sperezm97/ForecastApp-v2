@@ -1,19 +1,46 @@
+/* eslint-disable camelcase */
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StatusBar, ViewStyle, StyleSheet } from 'react-native';
+import {
+  useFonts,
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_600SemiBold,
+  Poppins_300Light,
+} from '@expo-google-fonts/poppins';
+import { AppLoading } from 'expo';
+import AppNavigator from './src/navigation';
+import Providers from './src/hooks/providers';
+import { isIOs } from './src/utils';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
-}
+type Styles = {
+  container: ViewStyle;
+};
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<Styles>({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
+
+export default function App(): React.ReactElement {
+  const [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_600SemiBold,
+    Poppins_300Light,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle={isIOs ? 'dark-content' : 'default'} />
+      <Providers>
+        <AppNavigator />
+      </Providers>
+    </SafeAreaView>
+  );
+}
