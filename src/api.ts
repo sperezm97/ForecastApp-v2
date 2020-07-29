@@ -1,13 +1,15 @@
 import axios, { AxiosRequestConfig, AxiosError, AxiosResponse } from 'axios';
+import { WEATHER_TOKEN_API } from 'react-native-dotenv';
 
 const instance = axios.create({
-  baseURL: 'http://api.openweathermap.org/data/2.5,
+  baseURL: 'http://api.openweathermap.org/data/2.5',
 });
 
 instance.interceptors.request.use(
   (config: AxiosRequestConfig) => {
-    config.url = config.url += "&appid=77aade2d2d68032076448a1e5b8367a1"
-    return config
+    const newConfig = { ...config };
+    newConfig.url += `&appid=${WEATHER_TOKEN_API}`;
+    return newConfig;
   },
   (error: AxiosError) => Promise.reject(error),
 );
