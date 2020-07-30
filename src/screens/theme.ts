@@ -2,24 +2,33 @@ import { Dimensions } from 'react-native';
 import { Theme } from '../types/Theme';
 
 const colors = {
-  primaryColorDark: '',
-  primaryColor: '#DB8F17',
-  primaryColorLight: ' ',
-  secondaryColorDark: '',
-  secondaryColor: '#514538',
-  secondaryColorLight: '',
-  accentColor: '',
+  orange: '#EF880D',
+  white: '#FFFFFF',
+  black: '#0B0505',
+  skyblue: '#C5E6EE',
+  yellowLight: '#FFEF69',
+  skyblueLight: '#D2ECFC',
+  blue: '#0051FF',
+  red: '#DC0000',
+  blueLight: '#0090FF',
+  yellowDark: '#FFAE00',
+  green: '#28E0AE',
+  fuxia: '#FF0090',
+  purple: '#5C2AFF',
+  purpleDarker: '#130E51',
+  greyDark: '#BBC0D4',
+  grey: '#EDF2F6',
+  greyLight: '#EDF0F5',
+  purpleDark: '#5D50FE',
 
-  grayDark: '#9d9999',
-  gray: '#b4b4b4',
-  grayLight: '##d3d3d3',
+  greenGradientStart: '#28E0AE',
+  greenGradientEnd: '#00FFBA',
 
-  danger: '',
-  success: '',
-  caution: '',
+  lighblueGradientStart: '#A3CCE3',
+  lighblueGradientEnd: '#A3CCE3',
 
-  text: '#B8A99A',
-  icons: '',
+  purpleGradientStart: '#5D50FE',
+  purpleGradientEnd: '#8572FC',
 };
 
 const layout = {
@@ -37,35 +46,97 @@ const spacing = {
 };
 
 const fonts = {
-  title: {
-    fontFamily: 'Poppins_600SemiBold',
-    fontSize: 24,
-    color: colors.text,
+  bigTitle: {
+    fontFamily: 'ProductSans-Regular',
+    fontSize: 120,
+    lineHeight: 144,
+    color: colors.white,
   },
-  subTiTle: {
-    fontFamily: 'Poppins_600SemiBold',
-    fontSize: 21,
-    color: colors.text,
+  subBigTitle: {
+    fontFamily: 'ProductSans-Regular',
+    fontSize: 61,
+    lineHeight: 73,
+    color: colors.white,
+  },
+  day: {
+    fontFamily: 'ProductSans-Bold',
+    fontSize: 47,
+    lineHeight: 56,
+    color: colors.white,
+  },
+  temp: {
+    fontFamily: 'ProductSans-Bold',
+    fontSize: 30,
+    lineHeight: 36,
+    color: colors.white,
+  },
+  temp2: {
+    fontFamily: 'ProductSans-Bold',
+    fontSize: 30,
+    lineHeight: 36,
+    color: colors.white,
+    opacity: '50%',
+  },
+  hour: {
+    fontFamily: 'ProductSans-Regular',
+    fontSize: 23,
+    lineHeight: 28,
+    color: colors.white,
+  },
+  title: {
+    fontFamily: 'ProductSans-Bold',
+    fontSize: 20,
+    lineHeight: 24,
+    color: colors.black,
+  },
+  subTitle: {
+    fontFamily: 'ProductSans-Bold',
+    fontSize: 19,
+    lineHeight: 23,
+    color: colors.black,
+  },
+  tempSmall: {
+    fontFamily: 'ProductSans-Regular',
+    fontSize: 19,
+    lineHeight: 23,
+    color: colors.black,
+  },
+  hourSmall: {
+    fontFamily: 'ProductSans-Bold',
+    fontSize: 14,
+    lineHeight: 17,
+    color: colors.black,
   },
   header: {
-    fontFamily: 'Poppins_500Medium',
-    fontSize: 18,
-    color: colors.text,
+    fontFamily: 'ProductSans-Bold',
+    fontSize: 17,
+    lineHeight: 20,
+    color: colors.black,
   },
   body: {
-    fontFamily: 'Poppins_500Medium',
-    fontSize: 16,
-    color: colors.text,
+    fontFamily: 'ProductSans-Bold',
+    fontSize: 15,
+    lineHeight: 18,
+    color: colors.purpleDark,
   },
   caption: {
-    fontFamily: 'Poppins_300Light',
-    fontSize: 12,
-    color: colors.text,
+    fontFamily: 'ProductSans-Regular',
+    fontSize: 14,
+    lineHeight: 17,
+    color: colors.white,
   },
   footnote: {
-    fontFamily: 'Poppins_300Light',
-    fontSize: 10,
-    color: colors.text,
+    fontFamily: 'ProductSans-Regular',
+    fontSize: 12,
+    lineHeight: 14,
+    color: colors.white,
+  },
+};
+
+const globalStyles = {
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 };
 
@@ -74,6 +145,7 @@ const theme: Theme = {
   layout,
   spacing,
   fonts,
+  globalStyles,
 };
 
 export default theme;

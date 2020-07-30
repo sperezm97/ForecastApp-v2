@@ -3,11 +3,13 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'prettier', 'react-native'],
+  extends: ['plugin:react/recommended', 'airbnb', 'prettier', 'react-native', 'jest'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
+    jest: true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {

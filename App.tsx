@@ -1,13 +1,7 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import { SafeAreaView, StatusBar, ViewStyle, StyleSheet } from 'react-native';
-import {
-  useFonts,
-  Poppins_400Regular,
-  Poppins_500Medium,
-  Poppins_600SemiBold,
-  Poppins_300Light,
-} from '@expo-google-fonts/poppins';
+import { useFonts } from 'expo-font';
 import { AppLoading } from 'expo';
 import AppNavigator from './src/navigation';
 import Providers from './src/hooks/providers';
@@ -25,10 +19,8 @@ const styles = StyleSheet.create<Styles>({
 
 export default function App(): React.ReactElement {
   const [fontsLoaded] = useFonts({
-    Poppins_400Regular,
-    Poppins_500Medium,
-    Poppins_600SemiBold,
-    Poppins_300Light,
+    'ProductSans-Bold': require('./src/assets/fonts/ProductSans-Bold.ttf'),
+    'ProductSans-Regular': require('./src/assets/fonts/ProductSans-Regular.ttf'),
   });
 
   if (!fontsLoaded) {

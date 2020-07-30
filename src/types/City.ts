@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-export type coord = {
+export type coords = {
   lon: number;
   lat: number;
 };
@@ -34,7 +34,7 @@ export type sys = {
 };
 
 export interface ICity {
-  coord: coord;
+  coord: coords;
   weather: weather[];
   base: string;
   main: main;

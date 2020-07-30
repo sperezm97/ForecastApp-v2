@@ -3,13 +3,12 @@ module.exports = function (api) {
   return {
     presets: [
       'babel-preset-expo',
-      'module:react-native-dotenv',
       'module:metro-react-native-babel-preset',
       '@babel/preset-typescript',
     ],
-    plugin: [
+    plugins: [
       [
-        'module-resolver',
+        require.resolve('babel-plugin-module-resolver'),
         {
           root: ['./src'],
           extensions: ['.ts', '.tsx', '.js', '.json'],

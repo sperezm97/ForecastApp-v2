@@ -1,23 +1,18 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { AppParamList } from './types/Navigation';
 import Home from './screens/Home';
 import Search from './screens/Search';
 
-const Main = createStackNavigator();
+const Main = createStackNavigator<AppParamList>();
 
 export default function AppNavigator() {
   return (
     <NavigationContainer>
-      <Main.Navigator>
-        <Main.Screen
-          name="Home"
-          component={Home}
-          options={{
-            headerBackground: '',
-          }}
-        />
-        <Main.Screen name="Search" component={Search} />
+      <Main.Navigator initialRouteName="Home" mode="card" headerMode="none">
+        <Main.Screen name="Home" component={Home} />
+        <Main.Screen name="Search" component={Search} options={{ headerShown: false }} />
       </Main.Navigator>
     </NavigationContainer>
   );

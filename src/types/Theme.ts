@@ -1,23 +1,34 @@
+import { TextStyle } from 'react-native';
+
 export interface Theme {
   colors: {
-    primaryColorDark: string;
-    primaryColor: string;
-    primaryColorLight: string;
-    secondaryColorDark: string;
-    secondaryColor: string;
-    secondaryColorLight: string;
-    accentColor: string;
+    orange: string;
+    white: string;
+    black: string;
+    skyblue: string;
+    yellowLight: string;
+    skyblueLight: string;
+    blue: string;
+    red: string;
+    blueLight: string;
+    yellowDark: string;
+    green: string;
+    fuxia: string;
+    purple: string;
+    purpleDarker: string;
+    greyDark: string;
+    grey: string;
+    greyLight: string;
+    purpleDark: string;
 
-    grayDark: string;
-    gray: string;
-    grayLight: string;
+    greenGradientStart: string;
+    greenGradientEnd: string;
 
-    danger: string;
-    success: string;
-    caution: string;
+    lighblueGradientStart: string;
+    lighblueGradientEnd: string;
 
-    text: string;
-    icons: string;
+    purpleGradientStart: string;
+    purpleGradientEnd: string;
   };
   layout: {
     width: number;
@@ -32,35 +43,18 @@ export interface Theme {
     xxl: number;
   };
   fonts: {
-    title: {
-      fontFamily: string;
-      fontSize: number;
-      color: string;
-    };
-    subTiTle: {
-      fontFamily: string;
-      fontSize: number;
-      color: string;
-    };
-    header: {
-      fontFamily: string;
-      fontSize: number;
-      color: string;
-    };
-    body: {
-      fontFamily: string;
-      fontSize: number;
-      color: string;
-    };
-    caption: {
-      fontFamily: string;
-      fontSize: number;
-      color: string;
-    };
-    footnote: {
-      fontFamily: string;
-      fontSize: number;
-      color: string;
+    bigTitle: TextStyle;
+    title: TextStyle;
+    subTiTle: TextStyle;
+    header: TextStyle;
+    body: TextStyle;
+    caption: TextStyle;
+    footnote: TextStyle;
+  };
+  globalStyles: {
+    center: {
+      justifyContent: string;
+      alignItems: string;
     };
   };
 }
